@@ -1,0 +1,82 @@
+{
+ "duration_s": 1.07,
+ "targets": "three cells (floor offsets px): [(-128, 20), (0, 50), (128, 10)], each delayed 0.07 s",
+ "layers": {
+  "mote": {
+   "tex": "mote.png",
+   "tint": [
+    1.0,
+    0.94,
+    0.7
+   ],
+   "blend": "additive",
+   "count": "4 per beam",
+   "motion": "spiral into a point high above the target, 0-0.30 s"
+  },
+  "beam": {
+   "tex": "beam.png",
+   "tint": [
+    1.0,
+    0.86,
+    0.5
+   ],
+   "blend": "additive",
+   "stretch": "from the top of the screen down to the cell",
+   "life": [
+    0.26,
+    0.9
+   ],
+   "alpha": "front falls top->bottom over 0.1 s; thins from the top from 55% of life"
+  },
+  "splash": {
+   "tex": "splash.png",
+   "tint": [
+    1.0,
+    0.84,
+    0.45
+   ],
+   "blend": "additive",
+   "plane": "floor",
+   "life": [
+    0.42,
+    0.85
+   ],
+   "scale": "0.3->1.2 cubic-out"
+  },
+  "glint": {
+   "tex": "glint.png",
+   "tint": [
+    1.0,
+    0.97,
+    0.85
+   ],
+   "blend": "additive",
+   "life": [
+    0.42,
+    0.62
+   ],
+   "scale": "0 -> 1.4 -> 0"
+  },
+  "dust": {
+   "tex": "dust.png",
+   "tint": [
+    1.0,
+    0.92,
+    0.65
+   ],
+   "blend": "additive",
+   "count": "8 per beam",
+   "motion": "rise 90 px inside the beam, fade in/out"
+  }
+ },
+ "fps_reference": 30,
+ "camera_elevation_deg": 70,
+ "canvas_px": [
+  512,
+  448
+ ],
+ "origin_px": [
+  256,
+  330
+ ]
+}

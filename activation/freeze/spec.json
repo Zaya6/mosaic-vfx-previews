@@ -1,0 +1,93 @@
+{
+ "rune": "freeze",
+ "fps_reference": 30,
+ "intro_frames": 12,
+ "loop_frames": 36,
+ "camera_elevation_deg": 70,
+ "layers": {
+  "floor_glow": {
+   "tint": [
+    0.35,
+    0.65,
+    1.0
+   ],
+   "blend": "additive",
+   "plane": "floor",
+   "alpha": "fade in over intro, then breathe 0.40-0.70, period 1.2 s"
+  },
+  "outer_ring": {
+   "tint": [
+    0.55,
+    0.85,
+    1.0
+   ],
+   "blend": "additive",
+   "plane": "floor",
+   "spin_deg_per_s": 25,
+   "intro": "fade in 0.28 s, scale 0.8->1.0"
+  },
+  "inner_ring": {
+   "tint": [
+    0.55,
+    0.85,
+    1.0
+   ],
+   "blend": "additive",
+   "plane": "floor",
+   "spin_deg_per_s": -18.75,
+   "intro": "fade in after 0.12 s"
+  },
+  "glyph": {
+   "tint_over_life": [
+    "white flash 0.22-0.32 s",
+    [
+     0.94,
+     0.25,
+     0.69
+    ]
+   ],
+   "blend": "alpha",
+   "plane": "billboard",
+   "offset_px": [
+    0,
+    -18
+   ],
+   "motion": "static; scale pulse 1.00-1.04, 1.2 s"
+  },
+  "glyph_glow": {
+   "tint": [
+    0.94,
+    0.25,
+    0.69
+   ],
+   "blend": "additive",
+   "note": "neon halo under the glyph; same transform as glyph; alpha 0.75-1.0 with the loop"
+  },
+  "glyph_core": {
+   "tint": [
+    1.0,
+    0.85,
+    0.95
+   ],
+   "blend": "additive",
+   "note": "hot centre line over the glyph; same transform; alpha 0.7 (1.0 during the flash)"
+  },
+  "mote": {
+   "tint": [
+    0.85,
+    0.97,
+    1.0
+   ],
+   "blend": "additive",
+   "count": 6,
+   "motion": "orbit the outer ring on the floor ellipse, half a turn per 1.2 s; bob 10+/-6 px; twinkle alpha"
+  },
+  "preview only": {
+   "sheets": [
+    "baked/activation_alpha_sheet.png",
+    "baked/activation_add_sheet.png"
+   ],
+   "note": "full effect, 12 intro + 36 loop frames, for preview/fallback; all motion above is engine motion on static textures"
+  }
+ }
+}

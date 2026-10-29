@@ -1,0 +1,137 @@
+{
+ "duration_s": 1.2,
+ "detonation_s": 0.24,
+ "origin": "target cell centre on the floor; 'above' = 40 world px up",
+ "layers": {
+  "ember": {
+   "tex": "ember.png",
+   "tint": [
+    1.0,
+    0.72,
+    0.3
+   ],
+   "blend": "additive",
+   "phases": [
+    "charge: 12 spiral in to the point 0-0.24 s",
+    "burst: 18 flung out, speed 140-280, up 80-220, gravity 1000, life 0.55-0.7 s, shrink, aligned to velocity"
+   ]
+  },
+  "core": {
+   "tex": "core.png",
+   "tint": [
+    1.0,
+    0.8,
+    0.45
+   ],
+   "blend": "additive",
+   "life": [
+    0.1,
+    0.34
+   ],
+   "scale": [
+    0.3,
+    1.0
+   ]
+  },
+  "flash + rays": {
+   "tex": [
+    "flash.png",
+    "rays.png"
+   ],
+   "tint": [
+    1.0,
+    0.96,
+    0.85
+   ],
+   "blend": "additive",
+   "frames": "2 at 0.24 s: glow scale 0.55, 0.7 alpha 0.8, 0.4; rays scale 1.6, 2.0 alpha 0.9, 0.45 (rotated 22.5 deg)"
+  },
+  "tongue": {
+   "tex": "tongue.png",
+   "blend": "additive",
+   "count": 14,
+   "tint_over_life": [
+    [
+     1.0,
+     0.82,
+     0.35
+    ],
+    [
+     0.95,
+     0.3,
+     0.1
+    ]
+   ],
+   "life_s": 0.3,
+   "motion": "outward 30->100 px, point outward, scale swell then shrink"
+  },
+  "puff_0..3": {
+   "blend": "additive",
+   "count": 6,
+   "tint_over_life": [
+    [
+     1.0,
+     0.82,
+     0.35
+    ],
+    [
+     0.95,
+     0.3,
+     0.1
+    ]
+   ],
+   "life_s": 0.42,
+   "motion": "expand 0.7->1.4, rise 50"
+  },
+  "shock": {
+   "tex": "shock.png",
+   "tint": [
+    1.0,
+    0.62,
+    0.25
+   ],
+   "blend": "additive",
+   "plane": "floor",
+   "life": [
+    0.24,
+    0.5
+   ],
+   "scale": "0.3->1.4 cubic-out"
+  },
+  "smoke_0..3": {
+   "blend": "alpha",
+   "tint": [
+    0.42,
+    0.36,
+    0.36
+   ],
+   "count": 6,
+   "life_s": 0.75,
+   "motion": "rise 30->120, spread, expand 0.6->1.5, rotate 30 deg"
+  },
+  "scorch": {
+   "tex": "scorch.png",
+   "tint": [
+    0.1,
+    0.06,
+    0.05
+   ],
+   "blend": "alpha",
+   "plane": "floor",
+   "life": [
+    0.28,
+    1.2
+   ]
+  }
+ },
+ "fps_reference": 30,
+ "camera_elevation_deg": 70,
+ "canvas_px": [
+  384,
+  384
+ ],
+ "origin_px": [
+  192,
+  250
+ ]
+}

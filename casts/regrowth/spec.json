@@ -1,0 +1,67 @@
+{
+ "duration_s": 1.6,
+ "note": "plays on the healed entity; repeat (or a quieter loop) each healing turn",
+ "layers": {
+  "floor + ring + column": {
+   "tex": [
+    "floor.png",
+    "ring.png",
+    "column.png"
+   ],
+   "tint": [
+    [
+     0.4,
+     0.8,
+     0.35
+    ],
+    [
+     0.6,
+     0.95,
+     0.5
+    ],
+    [
+     0.55,
+     0.9,
+     0.45
+    ]
+   ],
+   "blend": "additive",
+   "note": "breathe together (sin 6 rad/s) under a 0.25 s in / 0.35 s out envelope; floor and ring lie on the floor"
+  },
+  "leaf_0..1": {
+   "blend": "alpha",
+   "tint": [
+    0.8,
+    1.0,
+    0.55
+   ],
+   "count": 14,
+   "spawn": "every 0.08 s",
+   "life_s": 0.9,
+   "motion": "spiral up 230 px (3.2 rad), radius shrinks 40%, flutter +-35 deg, flip (y-squash 0.55-1), shrink out"
+  },
+  "mote": {
+   "tex": "mote.png",
+   "tint": [
+    1.0,
+    0.9,
+    0.5
+   ],
+   "blend": "additive",
+   "count": 18,
+   "spawn": "every 0.07 s",
+   "life_s": 0.7,
+   "motion": "rise 180 px, sway 6 px"
+  }
+ },
+ "fps_reference": 30,
+ "camera_elevation_deg": 70,
+ "canvas_px": [
+  384,
+  448
+ ],
+ "origin_px": [
+  192,
+  360
+ ]
+}

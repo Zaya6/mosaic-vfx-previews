@@ -1,0 +1,119 @@
+{
+ "fps_reference": 30,
+ "duration_s": 1.0,
+ "camera_elevation_deg": 70,
+ "cell_px": 384,
+ "origin": "cast cell centre on the floor",
+ "layers": {
+  "bloom": {
+   "tex": "bloom.png",
+   "tint": [
+    0.8,
+    0.94,
+    1.0
+   ],
+   "blend": "additive",
+   "life": [
+    0,
+    0.4
+   ],
+   "scale": [
+    0.5,
+    1.5
+   ],
+   "alpha": "sin(pi u)^1.3 * 0.8",
+   "offset_px": [
+    0,
+    -50
+   ]
+  },
+  "flash": {
+   "tex": "flash.png",
+   "tint": "white",
+   "blend": "additive",
+   "at_s": [
+    0.06,
+    0.5
+   ],
+   "frames": "pop: 3 frames alpha 1, 0.7, 0.35; crack: 1 frame 0.9"
+  },
+  "frost_ring": {
+   "tex": "frost_ring.png",
+   "tint": [
+    0.72,
+    0.9,
+    1.0
+   ],
+   "blend": "additive",
+   "plane": "floor",
+   "life": [
+    0,
+    0.62
+   ],
+   "scale": "0.2 -> 1.35 cubic-out",
+   "alpha": "in 0.1 s, out (1-u)^1.4"
+  },
+  "frost_mark": {
+   "tex": "frost_mark.png",
+   "tint": [
+    0.55,
+    0.78,
+    1.0
+   ],
+   "blend": "alpha",
+   "plane": "floor",
+   "life": [
+    0.25,
+    1.0
+   ],
+   "alpha": "in 0.19 s, out (1-u)^1.5 * 0.7"
+  },
+  "crystal": {
+   "flipbook": "baked/crystal_pop_sheet.png (colour; tint white)",
+   "or_sprite": "crystal.png + ice tint",
+   "pivot": "base (texture y=208 of 260)",
+   "y_scale": "0 -> 1.15 -> 1.0 over 4 frames, hold, crack at 0.50 s"
+  },
+  "shard_0..3": {
+   "blend": "alpha",
+   "tint": [
+    0.8,
+    0.94,
+    1.0
+   ],
+   "count": 16,
+   "spawn": "on the spires at 0.50 s",
+   "velocity": "outward 1.6x spawn position +-70 px/s, up 60-160 px/s",
+   "gravity_px_s2": 900,
+   "spin_deg_s": "360-720, random sign",
+   "life_s": "0.30-0.42",
+   "scale": "0.8-1.15 shrinking to 0 as (1-u)^1.1"
+  },
+  "sparkle": {
+   "tex": "sparkle.png",
+   "tint": [
+    0.92,
+    0.98,
+    1.0
+   ],
+   "blend": "additive",
+   "count": 10,
+   "spawn": "on facets every 0.045 s from 0.12 s, until the crack",
+   "life_s": 0.3,
+   "motion": "rise 25 px, twinkle, shrink"
+  },
+  "mist_0..3": {
+   "blend": "alpha",
+   "tint": [
+    0.7,
+    0.82,
+    0.95
+   ],
+   "count": 8,
+   "plane": "floor",
+   "life": "0.10+0.03k -> 0.88",
+   "motion": "outward 18 -> 93 px ease-out, scale 0.55 -> 1.15",
+   "alpha": "sin(pi u)^1.2 * 0.5"
+  }
+ }
+}
